@@ -27,10 +27,13 @@ public class Solution {
 
         for (int i = 0; i < horses.size(); i++) {
             if(horses.get(i).isFinished) countFinished++;
-            else System.out.println("Waiting for " + horses.get(i).getName());
+            else {
+                System.out.println("Waiting for " + horses.get(i).getName());
+                horses.get(i).join();
+            }
         }
 
-        
+
         return countFinished;
     }
 
