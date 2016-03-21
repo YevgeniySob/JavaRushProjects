@@ -1,7 +1,6 @@
 package com.javarush.test.level15.lesson12.bonus01;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 /* Осваивание статического блока
@@ -21,26 +20,26 @@ public class Solution {
         try {
             reset();
         }
-        catch (IOException e) {
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static Flyable result;
 
-    public static void reset() throws IOException {
+    public static void reset() throws Exception {
         //add your code here - добавьте код тут
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
         if (input.equals("helicopter")) {
-            Flyable result = new Helicopter();
+            result = new Helicopter();
         }
 
         if (input.equals("plane")) {
             int pas = reader.read();
-            Flyable result = new Plane(pas);
+            result = new Plane(pas);
         }
-//        reader.close();
+        reader.close();
 
 
     }
